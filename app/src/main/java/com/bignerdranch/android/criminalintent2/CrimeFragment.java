@@ -181,6 +181,22 @@ public class CrimeFragment extends Fragment {
 
         updatePhotoView();
 
+        //challenge 1
+
+        mPhotoView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(mPhotoFile!= null && mPhotoFile.exists())
+                {
+                    FragmentManager fragmentManager = getFragmentManager();
+
+                    SuspectImageFragment.newInstance(mPhotoFile).show(fragmentManager, DIALOG_DATE);
+                }
+            }
+        });
+
         return v;
     }
 
